@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Hero from './components/Hero'
 
 
 
@@ -6,9 +7,9 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-     <h1 className='font-circular-web text-6xl'>hello</h1>
-    </>
+    <main className='relative min-h-screen w-screen overflow-x-hidden'>
+      <Hero/>
+    </main>
   )
 }
 
