@@ -84,7 +84,7 @@ const Hero = () => {
                 trigger:"#frame",
                 start:"center center",
                 end:"bottom 80%",
-                scrub:true,
+                scrub:0.5,
                 
                 // markers:true
             }
