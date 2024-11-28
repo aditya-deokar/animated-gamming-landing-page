@@ -71,20 +71,38 @@ const Hero = () => {
 
     useGSAP(()=>{
         gsap.set("#frame",{
-            clipPath:"polygon(14% 21%, 73% 11%, 78% 83%, 0% 100%)",
-            borderRadius:"0 0 40% 0"
+            clipPath:"polygon(16% 16%, 86% 25%, 90% 91%, 0% 100%)",
+            // borderRadius:"0 0 40% 0"
+        })
+
+        const tl=gsap.timeline();
+
+        tl.from(".special-font",{
+            opacity:0,
+            y:100,
+            stagger:0.2,
+            ease:"back.inOut"
+        })
+        tl.from("#frame",{
+            // opacity:0,
+            y:100,
+            scale:0.5,
+            ease:"back.inOut",
+            duration:1,
+            // borderRadius:"20px"
         })
 
         gsap.from("#frame",{
             clipPath:"polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-            borderRadius:"0 0 0 0",
+            // borderRadius:"0 0 0 0",
             ease:"power1.inOut",
+            // scrub:1,
             scrollTrigger:{
                 scroller:"body",
                 trigger:"#frame",
-                start:"center center",
+                start:"80% 70%",
                 end:"bottom 80%",
-                scrub:0.5,
+                scrub:true,
                 
                 // markers:true
             }
@@ -136,7 +154,7 @@ const Hero = () => {
 
 
                 <video src={getVideoSrc(current===totalVideos-1 ? 1 : current )}
-                autoPlay loop muted 
+                // autoPlay loop muted 
                 className='absolute left-0 top-0 size-full object-cover object-center'
                 onLoadedData={handleVideoLoadFun}></video>
             </div>
